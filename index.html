@@ -1,416 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-        <title>ICSS - Indradhanush Chitrakoot Student Society | F.E.T Alumni</title>
-    <meta name="description" content="Official website of the Indradhanush Chitrakoot Student Society (ICSS), a non-profit alumni organization for graduates of IPST (now F.E.T) at MGCGV, Chitrakoot. We support students and alumni through health, education, and empowerment.">
-    <meta name="keywords" content="ICSS website, Indradhanush Chitrakoot Student Society, Chitrakoot alumni website, chitrakoot engineering students passout website, F.E.T MGCGV alumni, IPST Chitrakoot, MGCGV, Satna, MP, non-profit organization">
-            <script src="https://cdn.tailwindcss.com"></script>
-    
-        <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        // We'll create a color palette based on your logo
-                        'icss-blue': '#2563eb', // A strong, hopeful blue
-                        'icss-green': '#16a34a', // From the fist in the logo
-                        'icss-gold': '#f59e0b',  // A warm accent color
-                        'icss-dark': '#1e293b', // A professional dark gray for text
-                    },
-                    fontFamily: {
-                        // Using a clean, modern, and free Google Font
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-
-        <style>
-        /* This makes the website scroll smoothly when you click a nav link */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* This sets our default font */
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-
-        /* This creates the gradient overlay for the main image */
-        .hero-gradient {
-            background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%), 
-                        linear-gradient(to right, rgba(96, 165, 250, 0.1) 0%, rgba(255, 255, 255, 0) 50%);
-        }
-        
-        /* This styles the hero background image (your student group photo) */
-        .hero-bg {
-            /* FIXED: Changed to use local asset path */
-            background-image: url('assets/hero-bg.jpg');
-            background-position: center top;
-            background-size: cover;
-        }
-        
-        /* A little bounce animation for the "scroll down" arrow */
-        @keyframes bounce-arrow {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
-        }
-        .animate-bounce-slow {
-            animation: bounce-arrow 2s infinite;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indradhanush Chitrakoot Student Society</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-section {
+            background-image: url('assets/mgcgv-campus.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 80vh; /* Adjust height for impact */
+        }
+    </style>
 </head>
+<body class="bg-gray-50 text-gray-800">
 
-<body class="bg-white text-icss-dark">
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3">
+                    <img class="h-12 w-auto rounded-lg shadow-md" src="assets/logo.jpg" alt="ICSS Logo" onerror="this.onerror=null;this.src='https://placehold.co/48x48/005691/ffffff?text=Logo'">
+                    <span class="text-xl font-bold text-indigo-700 hidden sm:block">ICSS</span>
+                </a>
+                <!-- Navigation Links (Simple Menu for Single Page) -->
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    <a href="#about" class="text-gray-500 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition duration-150">About</a>
+                    <a href="#pillars" class="text-gray-500 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition duration-150">Our Pillars</a>
+                    <a href="#join" class="text-gray-500 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition duration-150">Join Us</a>
+                    <a href="#contact" class="text-gray-500 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition duration-150">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-        <header id="header" class="sticky top-0 z-50 bg-white shadow-md">
-        <nav class="container mx-auto max-w-7xl p-4 flex justify-between items-center">
-            
-                        <a href="#home" class="flex items-center space-x-2">
-                                <img src="assets/logo.png" alt="ICSS Logo" class="h-14 w-auto">
-            </a>
-            
-                        <div class="hidden md:flex items-center space-x-6">
-                <a href="#about" class="font-medium text-gray-600 hover:text-icss-blue transition-colors">About Us</a>
-                <a href="#roots" class="font-medium text-gray-600 hover:text-icss-blue transition-colors">Our Roots</a>
-                <a href="#pillars" class="font-medium text-gray-600 hover:text-icss-blue transition-colors">Our Pillars</a>
-                <a href="#education" class="font-medium text-gray-600 hover:text-icss-blue transition-colors">Education</a>
-                <a href="#social" class="font-medium text-gray-600 hover:text-icss-blue transition-colors">Social Impact</a>
-                <a href="#join" class="font-medium text-gray-600 hover:text-icss-blue transition-colors">Why Join</a>
-                <a href="#council" class="font-medium text-gray-600 hover:text-icss-blue transition-colors">Council</a>
-                <a href="#contact" class="font-medium text-gray-600 hover:text-icss-blue transition-colors">Contact</a>
-                <a href="#contact" class="bg-icss-blue text-white px-5 py-2 rounded-full font-bold shadow-lg hover:bg-blue-700 transition-transform hover:scale-105">
-                    Join Our Community
-                </a>
-            </div>
-            
-                        <button id="mobile-menu-button" class="md:hidden p-2 text-gray-700">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </button>
-        </nav>
-        
-                <div id="mobile-menu" class="hidden md:hidden bg-white shadow-xl absolute w-full">
-            <a href="#about" class="block py-3 px-6 text-lg font-medium text-gray-700 hover:bg-gray-100">About Us</a>
-            <a href="#roots" class="block py-3 px-6 text-lg font-medium text-gray-700 hover:bg-gray-100">Our Roots</a>
-            <a href="#pillars" class="block py-3 px-6 text-lg font-medium text-gray-700 hover:bg-gray-100">Our Pillars</a>
-            <a href="#education" class="block py-3 px-6 text-lg font-medium text-gray-700 hover:bg-gray-100">Education</a>
-            <a href="#social" class="block py-3 px-6 text-lg font-medium text-gray-700 hover:bg-gray-100">Social Impact</a>
-            <a href="#join" class="block py-3 px-6 text-lg font-medium text-gray-700 hover:bg-gray-100">Why Join</a>
-            <a href="#council" class="block py-3 px-6 text-lg font-medium text-gray-700 hover:bg-gray-100">Council</a>
-            <a href="#contact" class="block py-3 px-6 text-lg font-medium text-gray-700 hover:bg-gray-100">Contact</a>
-            <a href="#contact" class="block text-center m-4 bg-icss-blue text-white px-6 py-3 rounded-full font-bold shadow-lg">
-                Join Our Community
-            </a>
-        </div>
-    </header>
+    <!-- Hero Section -->
+    <header class="hero-section flex items-center justify-center">
+        <div class="text-center bg-black bg-opacity-50 p-8 md:p-12 rounded-xl max-w-4xl mx-4">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight">
+                Indradhanush Chitrakoot Student Society
+            </h1>
+            <p class="text-xl md:text-2xl text-indigo-200 font-medium">
+                Building a stronger, more connected IPST community through health, education, and empowerment.
+            </p>
+        </div>
+    </header>
 
-    <main>
+    <!-- A Catalyst for Positive Change Section -->
+    <section id="about" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-indigo-700 mb-4">A Catalyst for Positive Change</h2>
+                <div class="h-1 w-24 bg-indigo-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="space-y-6 text-lg text-gray-600">
+                    <p>Every great institution thrives on the strength of its community, and the **Indradhanush Chitrakoot Student Society (ICSS)** has been established to be that transformative force for IPSTians. Born from a collective vision shared by students, juniors, seniors, and colleagues alike, ICSS represents more than just an organisation—it embodies our commitment to mutual support and collective growth.</p>
+                    <p>As a registered legal entity, ICSS operates with complete **transparency and accountability** to its members. We recognised a crucial gap: the need for an officially recognised platform that could genuinely serve our community's diverse needs. This realisation sparked the creation of ICSS, an organisation dedicated to providing need-based monetary aid whilst fostering a robust societal framework.</p>
+                </div>
+                <!-- Image for Unity -->
+                <div>
+                    <img class="w-full h-80 object-cover rounded-xl shadow-2xl transition duration-500 hover:scale-[1.01]" 
+                         src="assets/hands-unity.jpg" 
+                         alt="Hands reaching together, symbolizing unity and growth"
+                         onerror="this.onerror=null;this.src='https://placehold.co/800x400/005691/ffffff?text=Unity+Image'">
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <h3 class="text-2xl font-semibold text-indigo-600 mb-3">Our Work Focuses on Three Fundamental Pillars</h3>
+                <p class="max-w-4xl mx-auto text-xl text-gray-600">
+                    Through these interconnected areas—**Health, Social Empowerment, and Education**—we strive to improve the livelihoods of our fellow IPST members, empowering them to lead better, more fulfilling lives. ICSS isn't simply about addressing immediate needs—it's about building a sustainable support system that will benefit generations of IPSTians to come.
+                </p>
+            </div>
+        </div>
+    </section>
 
-                <section id="home" class="relative pt-16 hero-bg">
-                        <div class="absolute inset-0 hero-gradient"></div>
-            
-            <div class="container mx-auto max-w-7xl p-4 relative z-10">
-                <div class="flex flex-col-reverse md:flex-row items-center pt-12 pb-24">
-                    
-                                        <div class="w-full md:w-1/2 text-center md:text-left mt-12 md:mt-0">
-                        <h1 class="text-4xl md:text-6xl font-black text-icss-dark tracking-tight">
-                            Indradhanush Chitrakoot Student Society
-                        </h1>
-                        <p class="mt-6 text-xl md:text-2xl text-gray-700 font-medium">
-                            Building a stronger, more connected IPST (now F.E.T) community through health, education, and empowerment.
-                        </p>
-                        <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                            <a href="#contact" class="bg-icss-blue text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-blue-700 transition-transform hover:scale-105">
-                                Join Our Community
-                            </a>
-                            <a href="#about" class="bg-white text-icss-blue border-2 border-gray-300 px-8 py-4 rounded-full font-bold text-lg shadow-md hover:bg-gray-50 transition-transform hover:scale-105">
-                                Learn More
-                            </a>
-                        </div>
-                    </div>
-                    
-                                        <div class="w-full md:w-1/2">
-                                            </div>
-                </div>
-            </div>
-            
-                        <div class="relative z-10 text-center -mt-16 pb-8">
-                <a href="#about" class="inline-block animate-bounce-slow">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7-7-7 7" />
-                    </svg>
-                </a>
-            </div>
-        </section>
+    <!-- Our Pillars & Programs Section -->
+    <section id="pillars" class="py-16 md:py-24 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Core Programmes: Our Impact</h2>
+                <p class="text-xl text-gray-500">How we are strengthening the IPST community.</p>
+            </div>
 
-                <section id="about" class="py-24 bg-white">
-            <div class="container mx-auto max-w-7xl p-4">
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
-                                        <div>
-                                                <img src="assets/about-us.jpg" alt="Students working together" class="rounded-2xl shadow-2xl w-full">
-                    </div>
-                    
-                                        <div class="mt-10 lg:mt-0">
-                        <span class="text-icss-blue font-bold text-lg uppercase">A Catalyst for Change</span>
-                        <h2 class="text-4xl md:text-5xl font-black text-icss-dark mt-3">
-                            A Catalyst for Positive Change
-                        </h2>
-                        <p class="text-lg text-gray-600 mt-6">
-                            Every great institution thrives on the strength of its community, and the Indradhanush Chitrakoot Student Society (ICSS) has been established to be that transformative force for IPSTians.
-                            <strong class="font-semibold text-icss-dark block mt-2">(IPST is now known as the Faculty of Engineering and Technology - F.E.T, under MGCGV, Chitrakoot, Satna, MP).</strong>
-                        </p>
-                        <p class="text-lg text-gray-600 mt-4">
-                            Born from a collective vision shared by students, juniors, seniors, and colleagues alike, ICSS represents more than just an organisation—it embodies our commitment to mutual support and collective growth.
-                        </p>
-                        <p class="text-lg text-gray-600 mt-4">
-                            As a registered legal entity, ICSS operates with complete transparency and accountability to its members. We recognised a crucial gap: the need for an officially recognised platform that could genuinely serve our community's diverse needs.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-                <section id="roots" class="py-24 bg-gray-100">
-            <div class="container mx-auto max-w-7xl p-4">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-icss-green font-bold text-lg uppercase">The Land of Inspiration</span>
-                    <h2 class="text-4xl md:text-5xl font-black text-icss-dark mt-3">
-                        Rooted in Chitrakoot: The Land of Tapasya
-                    </h2>
-                </div>
-                
-                <div class="grid lg:grid-cols-2 gap-16 items-start">
-                                        <div>
-                        <h3 class="text-3xl font-bold text-icss-dark">Lord Rama's Tapasya: Our Guiding Spirit</h3>
-                        <p class="text-lg text-gray-600 mt-4">
-                            Chitrakoot is a place steeped in sacred history, famously known as the location where **Lord Rama, Mata Sita, and Lakshmana** spent 11 years of their 14-year exile. This history teaches us the principle of **'Tapasya'**—doing great work with limited resources, self-reliance, and unwavering dedication to a higher purpose.
-                        </p>
-                        <p class="text-lg text-gray-600 mt-4">
-                            This spirit of disciplined effort and empowerment, even when faced with constraints, is the **core inspiration** for the Indradhanush Chitrakoot Student Society's mission to serve its community.
-                        </p>
-                                                <img src="assets/rama-story.jpg" 
-                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/800080/ffffff?text=Lord+Rama+in+Chitrakoot'"
-                             alt="Image depicting Lord Rama, Sita, and Lakshmana in Chitrakoot during their exile" class="rounded-2xl shadow-xl w-full mt-6 object-cover h-64">
-                    </div>
-                    
-                                        <div class="mt-10 lg:mt-0">
-                        <h3 class="text-3xl font-bold text-icss-dark">The Vision of Gramodaya Vishwavidyalaya</h3>
-                        <p class="text-lg text-gray-600 mt-4">
-                            The ICSS operates within the academic ecosystem of the **Mahatma Gandhi Chitrakoot Gramodaya Vishwavidyalaya (MGCGV)**, home to the **Faculty of Engineering and Technology (F.E.T), formerly known as IPST.**
-                        </p>
-                        <p class="text-lg text-gray-600 mt-4">
-                            This university, founded on the principles of rural upliftment and holistic development, shapes the environment we work in. Our dedication to **Health, Education, and Social Empowerment** is a direct reflection of MGCGV's vision.
-                        </p>
-                                                <img src="assets/mgcgv-campus.jpg"
-                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/2563eb/ffffff?text=MGCGV+Campus+Chitrakoot'"
-                             alt="Image of the Mahatma Gandhi Chitrakoot Gramodaya Vishwavidyalaya campus" class="rounded-2xl shadow-xl w-full mt-6 object-cover h-64">
-                    </div>
-                </div>
-            </div>
-        </section>
+            <!-- Program Grid (Ensuring equal sizing and responsive alignment) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <section id="pillars" class="py-24 bg-gray-50">
-            <div class="container mx-auto max-w-7xl p-4">
-                <div class="text-center max-w-3xl mx-auto">
-                    <h2 class="text-4xl md:text-5xl font-black text-icss-dark">
-                        Our work focuses on three fundamental pillars:
-                    </h2>
-                </div>
-                
-                <div class="grid md:grid-cols-3 gap-8 mt-16">
-                                        <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-icss-blue">
-                        <h3 class="text-3xl font-bold text-icss-dark">Health</h3>
-                        <p class="text-lg text-gray-600 mt-4">
-                            Improving the livelihoods of our fellow IPST members, empowering them to lead better, more fulfilling lives.
-                        </p>
-                    </div>
-                                        <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-icss-green">
-                        <h3 class="text-3xl font-bold text-icss-dark">Social Empowerment</h3>
-                        <p class="text-lg text-gray-600 mt-4">
-                            Building a sustainable support system that will benefit generations of IPSTians to come.
-                        </p>
-                    </div>
-                                        <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-icss-gold">
-                        <h3 class="text-3xl font-bold text-icss-dark">Education</h3>
-                        <p class="text-lg text-gray-600 mt-4">
-                            Addressing immediate needs and fostering a robust societal framework for growth.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <!-- Program Card 1: Career Counselling -->
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+                    <img class="w-full h-48 object-cover" 
+                         src="assets/career-counselling.jpg" 
+                         alt="Career Counselling Session"
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x300/3182CE/ffffff?text=Career+Counselling'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-indigo-600 mb-2">Education: Career Counselling</h3>
+                        <p class="text-gray-600">Providing guidance and resources to help students navigate career paths and make informed decisions about their future.</p>
+                    </div>
+                </div>
 
-                <section id="vision" class="py-24 bg-white">
-            <div class="container mx-auto max-w-7xl p-4">
-                <div class="text-center max-w-3xl mx-auto">
-                    <h2 class="text-4xl md:text-5xl font-black text-icss-dark">Our Vision & Mission</h2>
-                </div>
-                
-                <div class="grid md:grid-cols-2 gap-8 mt-16">
-                                        <div class="bg-gray-50 p-8 rounded-2xl shadow-lg">
-                        <h3 class="text-3xl font-bold text-icss-blue">Our Vision</h3>
-                        <p class="text-lg text-gray-600 mt-4">
-                            To create a thriving community that empowers IPST students and alumni through comprehensive health initiatives, quality education, and meaningful social upliftment, fostering a lasting legacy of care, collaboration, and collective success for all members.
-                        </p>
-                    </div>
-                                        <div class="bg-gray-50 p-8 rounded-2xl shadow-lg">
-                        <h3 class="text-3xl font-bold text-icss-green">Our Mission</h3>
-                        <ul class="list-disc list-outside text-lg text-gray-600 mt-4 pl-5 space-y-2">
-                            <li>Prioritise health and well-being through targeted programmes and financial assistance.</li>
-                            <li>Enable continuous learning and skill-building for academic and professional success.</li>
-                            <li>Strengthen community ties, promoting mutual support, respect, and shared goals.</li>
-                        </ul>
-                    </div>
-                </div>
-                <p class="text-lg text-gray-700 text-center max-w-4xl mx-auto mt-12">
-                    These guiding principles shape every decision we make and every programme we launch. We believe that when health, education, and community support work in harmony, extraordinary things become possible.
-                </p>
-            </div>
-        </section>
+                <!-- Program Card 2: Mock Interviews -->
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+                    <img class="w-full h-48 object-cover" 
+                         src="assets/mock-interviews.jpg" 
+                         alt="Mock Interview Session"
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x300/3182CE/ffffff?text=Mock+Interviews'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-indigo-600 mb-2">Education: Skill Development</h3>
+                        <p class="text-gray-600">Conducting realistic mock interviews and workshops to prepare members for the professional world.</p>
+                    </div>
+                </div>
+                
+                <!-- Program Card 3: Guest Speakers -->
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+                    <img class="w-full h-48 object-cover" 
+                         src="assets/speaker.jpg" 
+                         alt="Guest Speaker addressing a large audience"
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x300/3182CE/ffffff?text=Guest+Speakers'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-indigo-600 mb-2">Education: Knowledge Sharing</h3>
+                        <p class="text-gray-600">Hosting experienced professionals to share insights and inspire students across various domains.</p>
+                    </div>
+                </div>
+                
+                <!-- Program Card 4: Networking Events -->
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+                    <img class="w-full h-48 object-cover" 
+                         src="assets/networking.jpg" 
+                         alt="Group of students networking and conversing"
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x300/3182CE/ffffff?text=Networking'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-indigo-600 mb-2">Social Empowerment: Community Building</h3>
+                        <p class="text-gray-600">Creating opportunities for members to connect, collaborate, and build strong professional and personal relationships.</p>
+                    </div>
+                </div>
 
-                <section id="health" class="py-24 bg-icss-dark text-white">
-            <div class="container mx-auto max-w-7xl p-4">
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
-                                        <div>
-                        <span class="text-icss-gold font-bold text-lg uppercase">Our Primary Commitment</span>
-                        <h2 class="text-4xl md:text-5xl font-black text-white mt-3">
-                            Health First
-                        </h2>
-                        <p class="text-lg text-gray-300 mt-6">
-                            At ICSS, we firmly believe that health is the foundation upon which all success is built. Without physical, mental, and emotional well-being, even the most talented individuals struggle to reach their full potential.
-                        </p>
-                        <p class="text-lg text-gray-300 mt-4">
-                            Whether you're facing a medical emergency, experiencing psychological challenges, or need social support during difficult times, ICSS stands ready to help. Our financial assistance programme ensures that no member faces health crises alone.
-                        </p>
-                        <div class="mt-8 bg-icss-green p-6 rounded-lg">
-                            <p class="text-xl font-bold text-white">Emergency Support Available 24/7</p>
-                            <p class="text-lg text-green-100 mt-1">No IPST member should ever feel alone during a health crisis. Our dedicated support team is always ready to assist.</p>
-                        </div>
-                    </div>
-                    
-                                        <div class="mt-10 lg:mt-0">
-                                                <img src="assets/health-hands.jpg" alt="Hands coming together" class="rounded-2xl shadow-2xl w-full">
-                    </div>
-                </div>
-            </div>
-        </section>
+                <!-- Program Card 5: Social Events -->
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+                    <img class="w-full h-48 object-cover" 
+                         src="assets/social-events.jpg" 
+                         alt="Group participating in a fun social event"
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x300/3182CE/ffffff?text=Social+Events'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-indigo-600 mb-2">Social Empowerment: Cultural Initiatives</h3>
+                        <p class="text-gray-600">Organizing engaging social and cultural activities to promote well-being and a sense of belonging.</p>
+                    </div>
+                </div>
 
-                <section id="education" class="py-24 bg-white">
-            <div class="container mx-auto max-w-7xl p-4">
-                <div class="text-center max-w-3xl mx-auto">
-                    <span class="text-icss-blue font-bold text-lg uppercase">Building Brighter Futures</span>
-                    <h2 class="text-4xl md:text-5xl font-black text-icss-dark mt-3">
-                        Empowering Education
-                    </h2>
-                    <p class="text-xl text-gray-600 mt-6">
-                        Education extends far beyond textbooks and examinations—it's about unlocking potential, discovering passions, and acquiring the skills needed to navigate an ever-changing world.
-                    </p>
-                </div>
+                <!-- Program Card 6: Rama Story (Placeholder for one of the pillars) -->
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+                    <img class="w-full h-48 object-cover" 
+                         src="assets/rama-story.jpg" 
+                         alt="A scene from the Ramayana"
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x300/3182CE/ffffff?text=Cultural+Program'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-indigo-600 mb-2">Social Empowerment: Value Education</h3>
+                        <p class="text-gray-600">Using engaging storytelling to instill community values and ethical leadership principles in members.</p>
+                    </div>
+                </div>
 
-                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
-                                        <div class="text-center p-4">
-                        <h3 class="text-xl font-bold text-icss-dark">01</h3>
-                        <h4 class="text-2xl font-bold text-icss-dark mt-2">One-on-One Mentoring</h4>
-                        <p class="text-gray-600 mt-2">Connect with experienced mentors for personalised guidance and tailored support sessions.</p>
-                    </div>
-                                        <div class="text-center p-4">
-                        <h3 class="text-xl font-bold text-icss-dark">02</h3>
-                        <h4 class="text-2xl font-bold text-icss-dark mt-2">Skill-Development</h4>
-                        <p class="text-gray-600 mt-2">Access workshops and training that build practical skills employers value.</p>
-                    </div>
-                                        <div class="text-center p-4">
-                        <h3 class="text-xl font-bold text-icss-dark">03</h3>
-                        <h4 class="text-2xl font-bold text-icss-dark mt-2">Scholarships & Aid</h4>
-                        <p class="text-gray-600 mt-2">Receive merit-based and need-based financial support for your educational goals.</p>
-                    </div>
-                                        <div class="text-center p-4">
-                        <h3 class="text-xl font-bold text-icss-dark">04</h3>
-                        <h4 class="text-2xl font-bold text-icss-dark mt-2">Educational Tours</h4>
-                        <p class="text-gray-600 mt-2">Participate in exciting excursions that broaden your horizons and create new learning experiences.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </div>
+            
+            <!-- Impact Statement -->
+            <div class="mt-16 text-center max-w-4xl mx-auto">
+                <p class="text-xl text-gray-700 italic">
+                    "Our work doesn't stop at individuals. We empower members to become **agents of change** within their own circles. This multiplier effect means that every person we help has the potential to help countless others."
+                </p>
+            </div>
+        </div>
+    </section>
 
-                <section id="social" class="py-24 bg-gray-50">
-            <div class="container mx-auto max-w-7xl p-4">
-                <div class="text-center max-w-3xl mx-auto">
-                    <span class="text-icss-blue font-bold text-lg uppercase">Creating Impact Together</span>
-                    <h2 class="text-4xl md:text-5xl font-black text-icss-dark mt-3">
-                        Social & Professional Growth
-                    </h2>
-                </div>
+    <!-- Join Us Today Section -->
+    <section id="join" class="py-16 md:py-24 bg-indigo-700 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-6">Join Us Today</h2>
+            <p class="text-xl mb-8">
+                The Indradhanush Chitrakoot Student Society is ready to welcome you into our family. Whether you're seeking support, wanting to contribute your talents, or simply looking to connect with like-minded individuals who share your values, ICSS offers a home where you truly belong.
+            </p>
+            <p class="text-lg mb-10">
+                Our commitment to **transparency, accountability**, and member-focused service ensures that your participation in ICSS will be meaningful, rewarding, and impactful. Together, we're not just building an organisation—we're creating a legacy of care, collaboration, and community that will inspire generations of IPSTians to come.
+            </p>
+            <a href="#contact" class="inline-block bg-white text-indigo-700 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-indigo-100 transition duration-300 transform hover:scale-105">
+                Take the First Step
+            </a>
+            <p class="text-sm mt-4 italic">
+                The IPST community is stronger when we stand together, and your voice, your talents, and your participation matter.
+            </p>
+        </div>
+    </section>
 
-                                <div class="grid lg:grid-cols-2 gap-16 items-center mt-16">
-                    <div class="mt-10 lg:mt-0">
-                                                <img src="assets/volunteering.jpg" alt="Students volunteering" class="rounded-2xl shadow-2xl w-full">
-                    </div>
-                    <div>
-                        <h3 class="text-3xl font-bold text-icss-dark">Community Volunteering</h3>
-                        <p class="text-lg text-gray-600 mt-4">
-                            Give back to society whilst developing leadership skills and building meaningful connections. Our volunteering opportunities allow you to make a tangible difference in the lives of others whilst growing personally and professionally.
-                        </p>
-                    </div>
-                </div>
+    <!-- Contact & Footer Section -->
+    <footer id="contact" class="py-12 bg-gray-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 border-b border-gray-700 pb-8 mb-8">
+                
+                <!-- Contact Information -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-indigo-400">Get In Touch</h3>
+                    <div class="space-y-3">
+                        <p><strong>Mr Ridhish Sharma</strong></p>
+                        <p>Programme Coordinator</p>
+                        <p class="font-semibold text-lg">Mobile: 9977000975</p>
+                    </div>
+                    <div class="mt-4 space-y-3">
+                        <p><strong>Mr Rituraj Jain</strong></p>
+                        <p>Membership Services</p>
+                        <p class="font-semibold text-lg">Mobile: 9818383893</p>
+                    </div>
+                </div>
 
-                                <div class="grid lg:grid-cols-2 gap-16 items-center mt-16">
-                    <div class="order-last lg:order-first">
-                        <h3 class="text-3xl font-bold text-icss-dark">Memorable Social Events</h3>
-                        <p class="text-lg text-gray-600 mt-4">
-                            Life isn't just about work and study—it's about creating joyful memories with people who matter. Our social events bring the IPST community together for celebrations, cultural programmes, and networking opportunities that strengthen our bonds.
-                        </p>
-                    </div>
-                    <div class="mt-10 lg:mt-0">
-                                                <img src="assets/social-events.jpg" alt="Students dancing" class="rounded-2xl shadow-2xl w-full">
-                    </div>
-                </div>
-                
-                                <div class="max-w-4xl mx-auto mt-20 bg-white p-10 rounded-2xl shadow-xl">
-                    <h3 class="text-3xl font-bold text-icss-dark text-center">Professional Career Counselling</h3>
-                    <p class="text-lg text-gray-600 mt-4 text-center">
-                        Navigate your career path with confidence through expert guidance from industry professionals and successful alumni who understand your aspirations and challenges.
-                    </p>
-                    <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-3 text-lg text-gray-700 mt-6">
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-icss-green mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                            Resume and interview preparation
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-icss-green mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                            Industry insights and networking
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-icss-green mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                            Career transition support
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-icss-green mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                            Entrepreneurship guidance
-                        </li>
-                    </ul>
-                </div>
+                <!-- Call to Action -->
+                <div class="md:col-span-2">
+                    <h3 class="text-3xl font-extrabold mb-4">Don't wait to become part of something extraordinary.</h3>
+                    <p class="text-gray-400 text-lg">
+                        The ICSS family is growing, and we want you to be part of our story. Together, we'll create a brighter, more connected, and more empowered IPST community—one member, one programme, and one life-changing initiative at a time.
+                    </p>
+                    <div class="mt-6 flex justify-start md:justify-end">
+                        <a href="#join" class="bg-indigo-500 text-white font-bold py-3 px-8 rounded-lg hover:bg-indigo-600 transition duration-300">
+                            Explore Membership
+                        </a>
+                    </div>
+                </div>
 
-            </div>
-        </section>
+            </div>
 
-                <section id="join" class="py-24 bg-white">
-            <div class="container mx-auto max-w-7xl p-4">
-                <div class="text-center max-w-3xl mx-auto">
-                    <h2 class="text-4xl md:text-5xl font-black text-icss-dark">Why Join the ICSS Family?</h2>
+            <!-- Copyright and Final Text -->
+            <div class="text-center text-sm text-gray-500">
+                &copy; 2025 Indradhanush Chitrakoot Student Society. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
