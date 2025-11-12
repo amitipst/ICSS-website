@@ -32,10 +32,17 @@
 
     <div class="form-container">
         <header class="text-center mb-8">
+            <!-- ICSS Logo from assets/logo.jpg -->
+            <img class="h-16 w-16 mx-auto mb-4 rounded-full shadow-lg" 
+                 src="assets/logo.jpg" 
+                 alt="ICSS Logo" 
+                 onerror="this.onerror=null;this.src='https://placehold.co/64x64/10b981/ffffff?text=ICSS'">
+            
             <h1 class="text-3xl font-bold text-gray-800">ICSS Membership Registration</h1>
             <p class="text-lg text-gray-500 mt-2">Take your first step to join the community.</p>
         </header>
 
+        <!-- Formspree Action URL: https://formspree.io/f/xblqjvgp -->
         <form id="membershipForm" action="https://formspree.io/f/xblqjvgp" method="POST" class="space-y-6">
 
             <!-- Name -->
@@ -48,7 +55,7 @@
                        placeholder="Enter your full name">
             </div>
 
-            <!-- NEW FIELD: Email ID -->
+            <!-- Email ID (Mandatory) -->
             <div>
                 <label for="email" class="block text-sm font-medium text-gray-700">
                     Email ID <span class="required-asterisk">*</span>
@@ -58,7 +65,7 @@
                        placeholder="you@example.com">
             </div>
 
-            <!-- NEW FIELD: Mobile No. -->
+            <!-- Mobile No. (Mandatory) -->
             <div>
                 <label for="mobile" class="block text-sm font-medium text-gray-700">
                     Mobile No. <span class="required-asterisk">*</span>
@@ -67,7 +74,7 @@
                        pattern="[0-9]{10,15}"
                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm"
                        placeholder="e.g., 9876543210">
-                <p class="mt-1 text-xs text-gray-500">Please include the area code if applicable (min 10 digits).</p>
+                <p class="mt-1 text-xs text-gray-500">Please enter a valid phone number (min 10 digits).</p>
             </div>
 
             <!-- F.ET/I.P.S.T Roll No - -->
@@ -130,11 +137,21 @@
             <!-- Submission Status Message Box -->
             <div id="statusMessage" class="hidden p-4 rounded-md text-sm" role="alert"></div>
 
-            <!-- Submit Button -->
-            <button type="submit" id="submitButton"
-                    class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 transition duration-150 ease-in-out">
-                Submit Membership
-            </button>
+            <!-- Action Buttons: Submit and Back to Home -->
+            <div class="flex flex-col sm:flex-row-reverse sm:justify-between space-y-4 sm:space-y-0 sm:space-x-4">
+                
+                <!-- Submit Button -->
+                <button type="submit" id="submitButton"
+                        class="w-full sm:w-1/2 flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 transition duration-150 ease-in-out">
+                    Submit Membership
+                </button>
+
+                <!-- Back to Home Button -->
+                <a href="index.html"
+                   class="w-full sm:w-1/2 flex justify-center py-3 px-4 border border-gray-300 rounded-md shadow-sm text-lg font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out">
+                    Back to Home
+                </a>
+            </div>
         </form>
     </div>
 
@@ -235,6 +252,9 @@
             } else if (type === 'error') {
                 statusMessage.classList.add('bg-red-100', 'text-red-800');
             }
+
+            // Show the message
+            statusMessage.classList.remove('hidden');
 
             // Hide the message after 7 seconds
             setTimeout(() => {
