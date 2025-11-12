@@ -36,12 +36,6 @@
             <p class="text-lg text-gray-500 mt-2">Take your first step to join the community.</p>
         </header>
 
-        <!--
-            IMPORTANT: To make this form work, you must do two things:
-            1. Go to https://formspree.io/f/your_form_hash_here
-            2. Replace the action URL below with the unique endpoint that Formspree provides for 'amitipst@gmail.com'.
-               (The current hash "mlegazaz" is a placeholder for demonstration purposes and will not work.)
-        -->
         <form id="membershipForm" action="https://formspree.io/f/xblqjvgp" method="POST" class="space-y-6">
 
             <!-- Name -->
@@ -52,6 +46,28 @@
                 <input type="text" name="Name" id="name" required
                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm"
                        placeholder="Enter your full name">
+            </div>
+
+            <!-- NEW FIELD: Email ID -->
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">
+                    Email ID <span class="required-asterisk">*</span>
+                </label>
+                <input type="email" name="Email_ID" id="email" required
+                       class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm"
+                       placeholder="you@example.com">
+            </div>
+
+            <!-- NEW FIELD: Mobile No. -->
+            <div>
+                <label for="mobile" class="block text-sm font-medium text-gray-700">
+                    Mobile No. <span class="required-asterisk">*</span>
+                </label>
+                <input type="tel" name="Mobile_No" id="mobile" required
+                       pattern="[0-9]{10,15}"
+                       class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm"
+                       placeholder="e.g., 9876543210">
+                <p class="mt-1 text-xs text-gray-500">Please include the area code if applicable (min 10 digits).</p>
             </div>
 
             <!-- F.ET/I.P.S.T Roll No - -->
